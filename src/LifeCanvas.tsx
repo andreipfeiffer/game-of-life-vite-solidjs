@@ -7,23 +7,23 @@ function LifeCanvas() {
   let canvasRef: HTMLCanvasElement;
 
   onMount(() => {
-    drawCanvas();
+    drawCanvas(store.width, store.height);
   });
 
   createEffect(() => {
-    drawCanvas();
+    drawCanvas(store.width, store.height);
   });
 
-  const drawCanvas = () => {
+  const drawCanvas = (w: number, h: number) => {
     const ctx = canvasRef.getContext("2d");
     if (!ctx) return;
 
     ctx.fillStyle = "white";
-    ctx.fillRect(0, 0, store.width * store.size, store.height * store.size);
+    ctx.fillRect(0, 0, w * store.size, h * store.size);
 
     ctx.fillStyle = "black";
-    for (let row = 0; row < store.height; row++) {
-      for (let col = 0; col < store.width; col++) {
+    for (let row = 0; row < h; row++) {
+      for (let col = 0; col < w; col++) {
         const cell = store.population[row][col];
         if (cell) {
           ctx.fillRect(col * store.size, row * store.size, store.size, store.size);
