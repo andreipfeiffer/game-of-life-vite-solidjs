@@ -1,4 +1,4 @@
-import { For } from "solid-js";
+import { Index } from "solid-js";
 import { store } from "./state";
 
 import "./Life.css";
@@ -11,7 +11,7 @@ function Life() {
       class={`life ${store.size < SIZE_THRESHOLD ? "small-size" : ""}`}
       style={{ "--size": `${store.size}px` }}
     >
-      <For each={store.population}>{(row) => <Row row={row} />}</For>
+      <Index each={store.population}>{(row) => <Row row={row()} />}</Index>
     </div>
   );
 }
@@ -21,10 +21,9 @@ interface RowProps {
 }
 
 function Row(props: RowProps) {
-  const { row } = props;
   return (
     <div class="row">
-      <For each={row}>{(cell) => <Cell alive={cell} />}</For>
+      <Index each={props.row}>{(cell) => <Cell alive={cell()} />}</Index>
     </div>
   );
 }
@@ -34,8 +33,7 @@ interface CellProps {
 }
 
 function Cell(props: CellProps) {
-  const { alive } = props;
-  return <span class={`cell ${alive ? "cell-alive" : ""}`}></span>;
+  return <span class={`cell ${props.alive ? "cell-alive" : ""}`}></span>;
 }
 
 export default Life;
