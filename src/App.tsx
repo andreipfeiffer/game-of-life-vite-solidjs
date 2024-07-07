@@ -1,7 +1,7 @@
 import { createEffect, Show } from "solid-js";
 
 import { Preset } from "./types";
-import { store, updateNextPopulation } from "./state";
+import { store, updateNextPopulation } from "./store";
 import { LifetimeValues } from "./constants";
 
 import Life from "./Life";

@@ -1,5 +1,5 @@
 import { createEffect, onMount } from "solid-js";
-import { store } from "./state";
+import { store } from "./store";
 
 import "./LifeCanvas.css";
 

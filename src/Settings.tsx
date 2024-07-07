@@ -1,7 +1,7 @@
 import { createEffect } from "solid-js";
 import { getInitialState } from "./utils";
 import { Preset } from "./types";
-import { store, setStore, updateNextPopulation } from "./state";
+import { store, setStore, updateNextPopulation } from "./store";
 import { DEFAULT_SIZE, LifetimeValues } from "./constants";
 
 function Settings(props: { presets: Preset[]; }) {

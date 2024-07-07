@@ -1,5 +1,5 @@
 import { Index } from "solid-js";
-import { store } from "./state";
+import { store } from "./store";
 
 import "./Life.css";
 
