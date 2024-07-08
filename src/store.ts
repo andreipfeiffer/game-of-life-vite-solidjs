@@ -1,4 +1,4 @@
-import { createStore } from "solid-js/store";
+import { createStore, reconcile, unwrap } from "solid-js/store";
 import { LifetimeValues } from "./constants";
 import { getInitialState, getNextPopulation } from "./utils";
 
@@ -14,5 +14,9 @@ export const [store, setStore] = createStore({
 });
 
 export function updateNextPopulation() {
-    setStore("population", (prev) => getNextPopulation(prev))
+    // setStore("population", (prev) => getNextPopulation(prev));
+
+    // more or less the same performance as above
+    const newPopulation = getNextPopulation(unwrap(store.population));
+    setStore("population", reconcile(newPopulation, { merge: true }))
 }
