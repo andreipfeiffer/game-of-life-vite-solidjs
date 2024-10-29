@@ -7,6 +7,7 @@ const _ = false;
 
 export function getPresets(): Preset[] {
   return [
+    /*
     {
       id: "block",
       description: "Block (Still life)",
@@ -60,6 +61,7 @@ export function getPresets(): Preset[] {
         [_, _, _, _, _, _],
       ],
     },
+    */
     {
       id: "pulsar",
       description: "Pulsar (period 3 Oscillator)",
@@ -113,6 +115,7 @@ export function getPresets(): Preset[] {
         [...__(11)],
       ],
     },
+    /*
     {
       id: "glider",
       description: "Glider (Spaceship)",
@@ -160,6 +163,7 @@ export function getPresets(): Preset[] {
         [_, _, _, _, _, _, _, _, _, _, _, _],
       ],
     },
+    */
     {
       id: "HWSS",
       description: "Heavy-weight spaceship (HWSS)",
@@ -176,6 +180,7 @@ export function getPresets(): Preset[] {
         [_, _, _, _, _, _, _, _, _, _, _, _, _],
       ],
     },
+    /*
     {
       id: "diehard",
       description: "Die Hard (Methuselahs)",
@@ -202,6 +207,7 @@ export function getPresets(): Preset[] {
         [...__(100), O, O, _, _, O, O, O, _],
       ],
     },
+    */
     {
       id: "r_pentomino",
       description: "The R-pentomino (Methuselahs)",
@@ -215,6 +221,7 @@ export function getPresets(): Preset[] {
         [...__(100), _, O, _],
       ],
     },
+    /*
     {
       id: "infinite1",
       description: "Infinite 1",
@@ -268,6 +275,7 @@ export function getPresets(): Preset[] {
         ],
       ],
     },
+    */
     {
       id: "gospelslidergun",
       description: "Gosper glider gun",
