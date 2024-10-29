@@ -25,8 +25,7 @@ export function getNextPopulation(grid: Grid): Grid {
 
   for (let row = 0; row < grid.length; row += 1) {
     next[row] = [];
-    let isRowChanged = false;
-
+    
     for (let col = 0; col < grid[row].length; col += 1) {
       const isAlive = !!grid[row][col];
       const neighbors = getNeighbors(grid, row, col);
@@ -39,23 +38,12 @@ export function getNextPopulation(grid: Grid): Grid {
       } else {
         next[row][col] = false;
       }
-
-      // mark that the row has changed
-      if (next[row][col] !== grid[row][col]) {
-        isRowChanged = true;
-      }
-    }
-
-    if (!isRowChanged) {
-      // copy row reference if it hasn't changed
-      // so it is optimized by React.memo()
-      next[row] = grid[row];
     }
   }
 
   window.performance.mark("getNextPopulationEnd");
   window.performance.measure(
-    "🐌 getNextPopulation",
+    "⏳ getNextPopulation",
     "getNextPopulationStart",
     "getNextPopulationEnd"
   );
