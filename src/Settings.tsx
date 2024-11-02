@@ -31,7 +31,9 @@ function Settings(props: { presets: Preset[]; }) {
         <option value="html">HTML</option>
         <option value="canvas">Canvas</option>
       </select>{" "}
-      Width:{" "}
+      <br />
+      <br />
+      Grid:{" "}
       <input
         type="number"
         value={store.width}
@@ -39,7 +41,7 @@ function Settings(props: { presets: Preset[]; }) {
         maxlength="3"
         class="input"
       />{" "}
-      Height:{" "}
+      &times;{" "}
       <input
         type="number"
         value={store.height}
@@ -47,7 +49,7 @@ function Settings(props: { presets: Preset[]; }) {
         maxlength="3"
         class="input"
       />{" "}
-      Size:{" "}
+      Cell:{" "}
       <input
         type="number"
         value={store.size}
@@ -72,7 +74,7 @@ function Settings(props: { presets: Preset[]; }) {
           type="range"
           value={store.lifetime}
           min="1"
-          max="5"
+          max={Object.keys(LifetimeValues).length}
           onChange={(e) => setStore({ lifetime: e.target.valueAsNumber })}
           list="lifetime-options"
           style={{ margin: "0 1em" }}
