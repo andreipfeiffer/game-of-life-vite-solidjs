@@ -213,7 +213,7 @@ export function getPresets(): Preset[] {
       description: "The R-pentomino (Methuselahs)",
       width: 60,
       height: 60,
-      size: 3,
+      size: 6,
       grid: [
         ...Array(30).fill([false]),
         [...__(30), _, O, O],
