@@ -280,7 +280,7 @@ export function getPresets(): Preset[] {
       id: "gospelslidergun",
       description: "Gosper glider gun",
       width: 300,
-      height: 200,
+      height: 150,
       size: 3,
       grid: [
         ...Array(30).fill([false]),
