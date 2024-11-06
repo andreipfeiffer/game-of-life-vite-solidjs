@@ -88,6 +88,7 @@ export function getPresets(): Preset[] {
         [...__(17)],
       ],
     },
+    /*
     {
       id: "penta-decathlon",
       description: "Penta-decathlon (period 15 Oscillator)",
@@ -115,7 +116,6 @@ export function getPresets(): Preset[] {
         [...__(11)],
       ],
     },
-    /*
     {
       id: "glider",
       description: "Glider (Spaceship)",
