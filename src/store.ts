@@ -16,7 +16,7 @@ export const [store, setStore] = createStore({
 export function updateNextPopulation() {
     // setStore("population", (prev) => getNextPopulation(prev));
 
-    // more or less the same performance as above
+    // this is a bit faster than the above
     const newPopulation = getNextPopulation(unwrap(store.population));
     setStore("population", reconcile(newPopulation, { merge: true }))
 }
